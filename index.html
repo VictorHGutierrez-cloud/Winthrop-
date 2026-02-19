@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Winthrop Portugal Project - Proposal</title>
+	<title>Winthrop Portugal Project - Workforce Management Proposal | Factorial</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Comprehensive workforce management and access control solution for Winthrop's data center construction project in Portugal" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<style>
 		* {
 			margin: 0;
@@ -16,30 +20,38 @@
 		}
 
 		body {
-			font-family: 'Source Sans Pro', Helvetica, sans-serif;
-			font-size: 17pt;
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+			font-size: 16px;
 			font-weight: 400;
-			line-height: 1.65;
-			color: #6c757d;
-			background: #1e1e1e;
+			line-height: 1.7;
+			color: #e0e0e0;
+			background: #1a1a1a;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 		}
 
 		/* Typography */
 		h1, h2, h3, h4, h5, h6 {
-			font-weight: 400;
-			line-height: 1.2;
+			font-weight: 600;
+			line-height: 1.3;
 			margin: 0 0 1em 0;
-			color: #2e3842;
+			color: #ffffff;
+			letter-spacing: -0.02em;
 		}
 
-		h1 { font-size: 2.75em; }
-		h2 { font-size: 2em; }
-		h3 { font-size: 1.5em; }
-		h4 { font-size: 1.25em; }
+		h1 { font-size: 3.5em; font-weight: 700; }
+		h2 { font-size: 2.5em; font-weight: 600; }
+		h3 { font-size: 1.75em; font-weight: 600; }
+		h4 { font-size: 1.25em; font-weight: 600; }
+
+		p {
+			margin-bottom: 1.2em;
+			color: #b0b0b0;
+		}
 
 		strong, b {
 			font-weight: 600;
-			color: #2e3842;
+			color: #ffffff;
 		}
 
 		/* Page Wrapper */
@@ -51,15 +63,26 @@
 		/* Banner */
 		#banner {
 			position: relative;
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			background: linear-gradient(135deg, #0a1929 0%, #1a2332 50%, #0f1419 100%);
 			color: #fff;
 			text-align: center;
-			padding: 8em 0 6em 0;
-			cursor: default;
+			padding: 10em 0 8em 0;
+			overflow: hidden;
+		}
+
+		#banner::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: radial-gradient(circle at 30% 50%, rgba(0, 102, 204, 0.1) 0%, transparent 50%);
+			pointer-events: none;
 		}
 
 		#banner .inner {
-			max-width: 75em;
+			max-width: 1200px;
 			width: calc(100% - 4em);
 			margin: 0 auto;
 			position: relative;
@@ -67,46 +90,58 @@
 		}
 
 		#banner h2 {
-			font-size: 3.5em;
+			font-size: 4em;
 			margin-bottom: 0.5em;
 			color: #fff;
 			font-weight: 700;
+			text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 		}
 
 		#banner p {
 			font-size: 1.5em;
 			margin-bottom: 2em;
-			opacity: 0.95;
+			color: #b8c5d1;
+			font-weight: 300;
+		}
+
+		#banner .subtitle {
+			font-size: 1.1em;
+			color: #7a8a9a;
+			margin-top: 1em;
 		}
 
 		/* Buttons */
 		.button {
 			display: inline-block;
-			padding: 0.75em 2em;
+			padding: 1em 2.5em;
 			background: transparent;
-			border: 2px solid #fff;
-			border-radius: 4px;
+			border: 2px solid #0066cc;
+			border-radius: 6px;
 			text-decoration: none;
-			color: #fff;
+			color: #0066cc;
 			font-weight: 600;
 			text-transform: uppercase;
 			letter-spacing: 0.1em;
+			font-size: 0.9em;
 			transition: all 0.3s ease;
 		}
 
 		.button:hover {
-			background: #fff;
-			color: #667eea;
+			background: #0066cc;
+			color: #fff;
+			transform: translateY(-2px);
+			box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
 		}
 
 		.button.primary {
-			background: #fff;
-			color: #667eea;
+			background: #0066cc;
+			color: #fff;
+			border-color: #0066cc;
 		}
 
 		.button.primary:hover {
-			background: transparent;
-			color: #fff;
+			background: #0052a3;
+			border-color: #0052a3;
 		}
 
 		.actions {
@@ -122,20 +157,20 @@
 		/* Wrapper */
 		.wrapper {
 			position: relative;
-			padding: 5em 0;
+			padding: 6em 0;
 		}
 
 		.wrapper.style1 {
-			background: #f7f7f7;
+			background: #252525;
 		}
 
 		.wrapper.style2 {
-			background: #fff;
+			background: #1e1e1e;
 		}
 
 		.wrapper.style3 {
-			background: #2e3842;
-			color: rgba(255, 255, 255, 0.75);
+			background: #0f1419;
+			color: rgba(255, 255, 255, 0.85);
 		}
 
 		.wrapper.style3 h2,
@@ -145,7 +180,7 @@
 		}
 
 		.wrapper.style4 {
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			background: linear-gradient(135deg, #0a1929 0%, #1a2332 100%);
 			color: #fff;
 			text-align: center;
 		}
@@ -155,13 +190,70 @@
 		}
 
 		.wrapper.alt {
-			background: #f7f7f7;
+			background: #252525;
 		}
 
 		.inner {
-			max-width: 75em;
+			max-width: 1200px;
 			width: calc(100% - 4em);
 			margin: 0 auto;
+		}
+
+		/* About Winthrop Section */
+		.about-winthrop {
+			background: #1e1e1e;
+			padding: 6em 0;
+		}
+
+		.stats-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 2em;
+			margin: 3em 0;
+		}
+
+		.stat-card {
+			background: linear-gradient(135deg, #252525 0%, #2a2a2a 100%);
+			border: 1px solid #333;
+			border-radius: 8px;
+			padding: 2.5em 2em;
+			text-align: center;
+			transition: all 0.3s ease;
+		}
+
+		.stat-card:hover {
+			transform: translateY(-5px);
+			border-color: #0066cc;
+			box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
+		}
+
+		.stat-number {
+			font-size: 3em;
+			font-weight: 700;
+			color: #0066cc;
+			margin-bottom: 0.5em;
+			line-height: 1;
+		}
+
+		.stat-label {
+			font-size: 0.95em;
+			color: #b0b0b0;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+		}
+
+		.company-description {
+			background: #252525;
+			border-left: 4px solid #0066cc;
+			padding: 2.5em;
+			border-radius: 8px;
+			margin: 3em 0;
+		}
+
+		.company-description p {
+			font-size: 1.1em;
+			line-height: 1.8;
+			color: #d0d0d0;
 		}
 
 		/* Major Header */
@@ -171,72 +263,70 @@
 		}
 
 		.major h2 {
-			font-size: 2.5em;
+			font-size: 2.75em;
 			margin-bottom: 0.5em;
 		}
 
 		.major p {
-			font-size: 1.25em;
-			color: #6c757d;
+			font-size: 1.2em;
+			color: #b0b0b0;
+			max-width: 800px;
+			margin: 0 auto;
 		}
 
 		.wrapper.style3 .major p {
 			color: rgba(255, 255, 255, 0.75);
 		}
 
-		/* Icons */
-		.icons {
-			list-style: none;
-			padding: 0;
-			display: flex;
-			justify-content: center;
-			gap: 2em;
-			margin: 2em 0;
-		}
-
-		.icons.major li {
-			display: inline-block;
-			padding: 1em;
-		}
-
-		.icon {
-			display: inline-block;
-			width: 2em;
-			height: 2em;
-			line-height: 2em;
-			text-align: center;
-			font-size: 2.5em;
-		}
-
-		.icon.major {
-			font-size: 4em;
-		}
-
-		.icon.major.style1 { color: #667eea; }
-		.icon.major.style2 { color: #764ba2; }
-		.icon.major.style3 { color: #f093fb; }
-
 		/* Spotlight */
 		.spotlight {
 			display: flex;
 			align-items: center;
-			min-height: 30em;
+			min-height: 400px;
+			border-bottom: 1px solid #333;
+		}
+
+		.spotlight:last-child {
+			border-bottom: none;
 		}
 
 		.spotlight .image {
 			width: 50%;
-			background: #2e3842;
-			min-height: 30em;
+			background: linear-gradient(135deg, #0a1929 0%, #1a2332 100%);
+			min-height: 400px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			color: #fff;
-			font-size: 3em;
+			font-size: 4em;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.spotlight .image::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: radial-gradient(circle at center, rgba(0, 102, 204, 0.2) 0%, transparent 70%);
 		}
 
 		.spotlight .content {
 			width: 50%;
 			padding: 4em;
+		}
+
+		.spotlight .content h2 {
+			color: #fff;
+			margin-bottom: 1em;
+		}
+
+		.spotlight .content p {
+			color: #b0b0b0;
+			font-size: 1.05em;
+			line-height: 1.8;
 		}
 
 		.spotlight:nth-child(even) {
@@ -249,92 +339,108 @@
 			padding: 0;
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 3em;
+			gap: 2.5em;
 		}
 
 		.features li {
 			text-align: center;
-		}
-
-		.features .icon {
-			margin-bottom: 1em;
-			color: #667eea;
-		}
-
-		.features li {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			padding: 2em;
+			background: rgba(255, 255, 255, 0.02);
+			border-radius: 8px;
+			border: 1px solid rgba(255, 255, 255, 0.05);
+			transition: all 0.3s ease;
+		}
+
+		.features li:hover {
+			background: rgba(255, 255, 255, 0.05);
+			border-color: #0066cc;
+			transform: translateY(-5px);
+		}
+
+		.features .icon {
+			font-size: 3em;
+			margin-bottom: 1em;
+			color: #0066cc;
 		}
 
 		.features h3 {
-			margin-bottom: 0.5em;
+			margin-bottom: 0.75em;
+			color: #fff;
+		}
+
+		.features p {
+			color: #b0b0b0;
+			font-size: 0.95em;
 		}
 
 		/* Pricing Cards */
 		.pricing-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
 			gap: 3em;
 			margin: 3em 0;
 		}
 
 		.pricing-card {
-			background: #fff;
-			border: 2px solid #e5e5e5;
-			border-radius: 8px;
-			padding: 3em;
+			background: linear-gradient(135deg, #252525 0%, #2a2a2a 100%);
+			border: 2px solid #333;
+			border-radius: 12px;
+			padding: 3.5em;
 			text-align: center;
 			transition: all 0.3s ease;
 		}
 
 		.pricing-card:hover {
-			border-color: #667eea;
-			transform: translateY(-5px);
-			box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+			border-color: #0066cc;
+			transform: translateY(-8px);
+			box-shadow: 0 15px 40px rgba(0, 102, 204, 0.25);
 		}
 
 		.pricing-card h3 {
 			font-size: 1.75em;
-			margin-bottom: 1em;
-			color: #2e3842;
+			margin-bottom: 1.5em;
+			color: #fff;
 		}
 
 		.price {
-			font-size: 3.5em;
+			font-size: 4em;
 			font-weight: 700;
-			color: #667eea;
+			color: #0066cc;
 			margin: 0.5em 0;
 			line-height: 1;
 		}
 
 		.price-detail {
 			font-size: 1em;
-			color: #6c757d;
+			color: #b0b0b0;
 			margin: 1em 0;
 		}
 
 		.pricing-features {
 			list-style: none;
 			padding: 0;
-			margin: 2em 0;
+			margin: 2.5em 0;
 			text-align: left;
 		}
 
 		.pricing-features li {
-			padding: 0.75em 0;
-			padding-left: 2em;
+			padding: 1em 0;
+			padding-left: 2.5em;
 			position: relative;
-			border-bottom: 1px solid #e5e5e5;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+			color: #d0d0d0;
 		}
 
 		.pricing-features li:before {
 			content: "✓";
 			position: absolute;
 			left: 0;
-			color: #667eea;
+			color: #0066cc;
 			font-weight: bold;
-			font-size: 1.2em;
+			font-size: 1.3em;
 		}
 
 		.pricing-features li:last-child {
@@ -343,12 +449,13 @@
 
 		/* Total Box */
 		.total-box {
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
 			color: #fff;
 			padding: 4em;
-			border-radius: 8px;
+			border-radius: 12px;
 			text-align: center;
 			margin: 3em 0;
+			box-shadow: 0 10px 40px rgba(0, 102, 204, 0.3);
 		}
 
 		.total-box h3 {
@@ -358,7 +465,7 @@
 		}
 
 		.total-amount {
-			font-size: 4em;
+			font-size: 4.5em;
 			font-weight: 700;
 			margin: 0.5em 0;
 			line-height: 1;
@@ -380,17 +487,23 @@
 		}
 
 		.requirement-item {
-			background: #fff;
-			border-left: 4px solid #667eea;
+			background: rgba(255, 255, 255, 0.02);
+			border-left: 4px solid #0066cc;
 			padding: 2em;
-			border-radius: 4px;
-			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			border-radius: 8px;
+			border: 1px solid rgba(255, 255, 255, 0.05);
+			transition: all 0.3s ease;
+		}
+
+		.requirement-item:hover {
+			background: rgba(255, 255, 255, 0.05);
+			transform: translateX(5px);
 		}
 
 		.requirement-item h4 {
 			font-size: 1.25em;
 			margin-bottom: 1em;
-			color: #2e3842;
+			color: #fff;
 		}
 
 		.requirement-item ul {
@@ -402,61 +515,74 @@
 			padding: 0.5em 0;
 			padding-left: 1.5em;
 			position: relative;
-			color: #6c757d;
+			color: #b0b0b0;
 		}
 
 		.requirement-item ul li:before {
 			content: "•";
 			position: absolute;
 			left: 0;
-			color: #667eea;
+			color: #0066cc;
 			font-weight: bold;
+			font-size: 1.2em;
 		}
 
 		/* Pending Box */
 		.pending-box {
-			background: #fff3cd;
+			background: rgba(255, 193, 7, 0.1);
 			border-left: 4px solid #ffc107;
 			padding: 2em;
-			border-radius: 4px;
+			border-radius: 8px;
 			margin: 2em 0;
+			border: 1px solid rgba(255, 193, 7, 0.2);
 		}
 
 		.pending-box h4 {
-			color: #856404;
+			color: #ffc107;
 			margin-bottom: 0.5em;
 		}
 
 		.pending-box p {
-			color: #856404;
+			color: #ffd54f;
 			margin: 0;
 		}
 
 		/* Why Grid */
 		.why-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 			gap: 2em;
 			margin: 2em 0;
 		}
 
 		.why-item {
 			text-align: center;
-			padding: 2em;
+			padding: 2.5em 2em;
+			background: rgba(255, 255, 255, 0.02);
+			border-radius: 8px;
+			border: 1px solid rgba(255, 255, 255, 0.05);
+			transition: all 0.3s ease;
+		}
+
+		.why-item:hover {
+			background: rgba(255, 255, 255, 0.05);
+			border-color: #0066cc;
+			transform: translateY(-5px);
 		}
 
 		.why-item .icon {
 			font-size: 3em;
-			color: #667eea;
+			color: #0066cc;
 			margin-bottom: 1em;
 		}
 
 		.why-item h4 {
-			margin-bottom: 0.5em;
+			margin-bottom: 0.75em;
+			color: #fff;
 		}
 
 		.why-item p {
-			color: #6c757d;
+			color: #b0b0b0;
 		}
 
 		.wrapper.style3 .why-item p {
@@ -465,32 +591,40 @@
 
 		/* Next Steps */
 		.next-steps {
-			background: #e7f3ff;
+			background: rgba(33, 150, 243, 0.1);
 			border-left: 4px solid #2196F3;
-			padding: 2em;
-			border-radius: 4px;
+			padding: 2.5em;
+			border-radius: 8px;
 			margin: 2em 0;
+			border: 1px solid rgba(33, 150, 243, 0.2);
 		}
 
 		.next-steps ol {
 			margin-left: 2em;
-			line-height: 2;
+			line-height: 2.2;
 		}
 
 		.next-steps li {
-			margin-bottom: 0.5em;
+			margin-bottom: 0.75em;
+			color: #b0d4ff;
+		}
+
+		.next-steps li strong {
+			color: #fff;
 		}
 
 		/* Footer */
 		#footer {
-			background: #2e3842;
-			color: rgba(255, 255, 255, 0.75);
+			background: #0f1419;
+			color: rgba(255, 255, 255, 0.6);
 			text-align: center;
 			padding: 4em 0;
+			border-top: 1px solid #333;
 		}
 
 		#footer p {
 			margin: 0.5em 0;
+			color: rgba(255, 255, 255, 0.6);
 		}
 
 		#footer strong {
@@ -499,8 +633,16 @@
 
 		.contact-info {
 			margin-top: 2em;
-			font-size: 0.9em;
+			font-size: 0.95em;
 			opacity: 0.8;
+		}
+
+		/* Icon replacements */
+		.icon-svg {
+			width: 48px;
+			height: 48px;
+			margin: 0 auto 1em;
+			display: block;
 		}
 
 		/* Responsive */
@@ -515,26 +657,43 @@
 			}
 
 			.pricing-grid,
-			.requirements-grid {
+			.requirements-grid,
+			.stats-grid {
 				grid-template-columns: 1fr;
+			}
+
+			#banner h2 {
+				font-size: 2.5em;
 			}
 		}
 
 		@media screen and (max-width: 736px) {
+			#banner {
+				padding: 6em 0 4em 0;
+			}
+
 			#banner h2 {
 				font-size: 2em;
 			}
 
 			#banner p {
-				font-size: 1.2em;
+				font-size: 1.1em;
 			}
 
 			.wrapper {
-				padding: 3em 0;
+				padding: 4em 0;
 			}
 
 			.inner {
 				width: calc(100% - 2em);
+			}
+
+			.major h2 {
+				font-size: 2em;
+			}
+
+			.price {
+				font-size: 3em;
 			}
 		}
 	</style>
@@ -550,9 +709,46 @@
 				<h2>Winthrop Portugal Project</h2>
 				<p>Comprehensive Workforce Management<br />
 				& Access Control Solution</p>
+				<p class="subtitle">Tailored for Data Center Construction Projects</p>
 				<ul class="actions special">
 					<li><a href="#one" class="button primary">View Proposal</a></li>
 				</ul>
+			</div>
+		</section>
+
+		<!-- About Winthrop -->
+		<section class="about-winthrop">
+			<div class="inner">
+				<header class="major">
+					<h2>About Winthrop Technologies</h2>
+					<p>Europe's leading dedicated data center delivery partner</p>
+				</header>
+				<div class="stats-grid">
+					<div class="stat-card">
+						<div class="stat-number">€2BN</div>
+						<div class="stat-label">Projected Turnover 2024</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number">29</div>
+						<div class="stat-label">Years of Excellence</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number">+750</div>
+						<div class="stat-label">Strong Team</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number">7</div>
+						<div class="stat-label">European Countries</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number">430MW</div>
+						<div class="stat-label">IT Load in Projects</div>
+					</div>
+				</div>
+				<div class="company-description">
+					<p><strong>Winthrop Technologies</strong> is the leading and most trusted company in the data center construction sector and the only dedicated data center delivery partner in Europe. Headquartered in Dublin, Winthrop delivers turnkey solutions throughout Europe, providing services from design through to construction across the full range of civil, structural, architectural, mechanical and electrical services as well as commissioning.</p>
+					<p style="margin-top: 1.5em;">Currently constructing multiple turnkey data center projects across 7 different European countries, Winthrop combines engineering excellence with seasoned experience, practicing a "hands-on" approach to project delivery since the company's foundation.</p>
+				</div>
 			</div>
 		</section>
 
@@ -561,8 +757,8 @@
 			<div class="inner">
 				<header class="major">
 					<h2>Proposed Solution</h2>
-					<p>Complete software and hardware solution designed for<br />
-					data center construction projects with Portuguese compliance</p>
+					<p>Complete software and hardware solution designed specifically for<br />
+					data center construction projects with full Portuguese compliance</p>
 				</header>
 				<div class="pricing-grid">
 					<!-- Software Card -->
@@ -579,7 +775,7 @@
 							<li>API integrations (SkillCo)</li>
 							<li>Compliance notifications</li>
 						</ul>
-						<div class="price-detail" style="margin-top: 2em; padding-top: 1em; border-top: 1px solid #e5e5e5;">
+						<div class="price-detail" style="margin-top: 2em; padding-top: 1.5em; border-top: 1px solid rgba(255,255,255,0.1);">
 							<strong>Implementation:</strong> Same as one month<br>
 							<strong>Contract:</strong> 12 months or 3-month POC
 						</div>
@@ -598,7 +794,7 @@
 							<li>Passback control</li>
 							<li>2 zones (Office + Site)</li>
 						</ul>
-						<div class="price-detail" style="margin-top: 2em; padding-top: 1em; border-top: 1px solid #e5e5e5;">
+						<div class="price-detail" style="margin-top: 2em; padding-top: 1.5em; border-top: 1px solid rgba(255,255,255,0.1);">
 							<strong>Integration:</strong> €1.00/employee (one-time)
 						</div>
 					</div>
@@ -620,30 +816,30 @@
 		<!-- Two -->
 		<section id="two" class="wrapper alt style2">
 			<section class="spotlight">
-				<div class="image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-					<span style="font-size: 5em;">🇵🇹</span>
+				<div class="image">
+					<span style="font-size: 5em; position: relative; z-index: 1;">🇵🇹</span>
 				</div>
 				<div class="content">
 					<h2>Portuguese Compliance</h2>
-					<p>Full compliance with GDPR, Portuguese labor law, working hours regulations, and automatic notifications. Seamless integration with Primavera and other Portuguese payroll systems.</p>
+					<p>Full compliance with GDPR, Portuguese labor law, working hours regulations, and automatic notifications. Seamless integration with Primavera and other Portuguese payroll systems. The system automatically alerts you of any violations of Portuguese working time regulations, ensuring complete compliance for your data center construction project.</p>
 				</div>
 			</section>
 			<section class="spotlight">
-				<div class="image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-					<span style="font-size: 5em;">🔗</span>
+				<div class="image">
+					<span style="font-size: 5em; position: relative; z-index: 1;">🔗</span>
 				</div>
 				<div class="content">
 					<h2>SkillCo Integration</h2>
-					<p>API integration for automatic certificate transfer from SkillCo. System blocks access to turnstiles if required certifications are not completed. Real-time synchronization with employee profiles.</p>
+					<p>API integration for automatic certificate transfer from SkillCo. System blocks access to turnstiles if required certifications are not completed. Real-time synchronization with employee profiles ensures that only certified workers can access the construction site, maintaining the highest safety standards for your data center project.</p>
 				</div>
 			</section>
 			<section class="spotlight">
-				<div class="image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-					<span style="font-size: 5em;">🚪</span>
+				<div class="image">
+					<span style="font-size: 5em; position: relative; z-index: 1;">🚪</span>
 				</div>
 				<div class="content">
 					<h2>Access Control System</h2>
-					<p>6 turnstiles with biometric readers across 2 distinct zones (office and construction site). Biometric or card-based access with passback prevention. Emergency roll call functionality.</p>
+					<p>6 turnstiles with biometric readers across 2 distinct zones (office and construction site). Biometric or card-based access with passback prevention. Emergency roll call functionality ensures complete safety compliance for high-security data center construction environments.</p>
 				</div>
 			</section>
 		</section>
@@ -658,32 +854,32 @@
 				</header>
 				<ul class="features">
 					<li>
-						<span class="icon" style="font-size: 2em; display: block; margin-bottom: 0.5em;">🇵🇹</span>
+						<span class="icon" style="font-size: 2.5em; display: block; margin-bottom: 0.75em;">🇵🇹</span>
 						<h3>Portuguese Compliance</h3>
 						<p>GDPR compliance, labor law compliance, automatic notifications, Primavera integration</p>
 					</li>
 					<li>
-						<span class="icon" style="font-size: 2em; display: block; margin-bottom: 0.5em;">🔗</span>
+						<span class="icon" style="font-size: 2.5em; display: block; margin-bottom: 0.75em;">🔗</span>
 						<h3>SkillCo Integration</h3>
 						<p>API integration, certificate transfer, access blocking logic, real-time sync</p>
 					</li>
 					<li>
-						<span class="icon" style="font-size: 2em; display: block; margin-bottom: 0.5em;">📋</span>
+						<span class="icon" style="font-size: 2.5em; display: block; margin-bottom: 0.75em;">📋</span>
 						<h3>Digital Onboarding</h3>
 						<p>Immigration control, document management, expiration alerts, workflow automation</p>
 					</li>
 					<li>
-						<span class="icon" style="font-size: 2em; display: block; margin-bottom: 0.5em;">🚪</span>
+						<span class="icon" style="font-size: 2.5em; display: block; margin-bottom: 0.75em;">🚪</span>
 						<h3>Access Control</h3>
 						<p>6 turnstiles, biometric/card access, 2 distinct zones, passback prevention</p>
 					</li>
 					<li>
-						<span class="icon" style="font-size: 2em; display: block; margin-bottom: 0.5em;">🚨</span>
+						<span class="icon" style="font-size: 2.5em; display: block; margin-bottom: 0.75em;">🚨</span>
 						<h3>Emergency Features</h3>
 						<p>Roll Call function, real-time presence, area filtering, company filtering</p>
 					</li>
 					<li>
-						<span class="icon" style="font-size: 2em; display: block; margin-bottom: 0.5em;">📊</span>
+						<span class="icon" style="font-size: 2.5em; display: block; margin-bottom: 0.75em;">📊</span>
 						<h3>Reporting & Analytics</h3>
 						<p>HR statistics, security reports, hours by zone, compliance tracking</p>
 					</li>
